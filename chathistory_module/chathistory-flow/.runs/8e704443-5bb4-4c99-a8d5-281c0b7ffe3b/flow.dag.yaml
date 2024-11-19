@@ -1,0 +1,38 @@
+id: template_standard_flow
+name: Template Standard Flow
+inputs:
+  user_id:
+    type: string
+    default: ""
+    is_chat_input: false
+  conversation_id:
+    type: string
+    default: ""
+    is_chat_input: false
+  message_content:
+    type: string
+    default: ""
+    is_chat_input: false
+  role:
+    type: string
+    default: ""
+    is_chat_input: false
+outputs:
+  output:
+    type: string
+    reference: ${chathistory.output}
+nodes:
+- name: chathistory
+  type: python
+  source:
+    type: code
+    path: chathist.py
+  inputs:
+    conversation_id: ${inputs.conversation_id}
+    message_content: ${inputs.message_content}
+    role: ${inputs.role}
+    user_id: ${inputs.user_id}
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

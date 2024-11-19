@@ -1,0 +1,59 @@
+{
+  "package": {},
+  "code": {
+    "chathist.py": {
+      "name": "chathist.py",
+      "type": "python",
+      "inputs": {
+        "conversation_id": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.conversation_id}",
+          "id": "wmomjqdx"
+        },
+        "message_content": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.message_content}",
+          "id": "sln5ch5h"
+        },
+        "role": {
+          "type": [
+            "string"
+          ],
+          "default": "user",
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.role}",
+          "id": "nxae42bq"
+        },
+        "user_id": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.user_id}",
+          "id": "uljlu92z"
+        }
+      },
+      "description": "Save a message to the Cosmos DB, creating a conversation if necessary.\n\nArgs:\n    user_id (str): Unique identifier for the user.\n    message_content (str): Content of the message.\n    conversation_id (str): Unique identifier for the conversation (can be None for new conversations).\n    role (str): Role of the sender (default is \"user\").\n    \nReturns:\n    dict: Contains status, conversation_id, and details of the saved message.",
+      "source": "chathist.py",
+      "function": "save_to_cosmos",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "chathist.py"
+    }
+  }
+}
